@@ -1,10 +1,9 @@
-const {Router} = require('express')
+const { Router } = require("express");
+const { getToDo, saveToDo } = require("../controlers/TodoControler");
 
-const router = Router
+const router = Router();
 
-router.get('/', (req, res) => {
-    res.json({message: 'Hey there....'})
-    console.log('Hey there....')
-    })
+router.get("/", getToDo);
+router.post("/save", saveToDo);
 
 module.exports = router;
