@@ -1,0 +1,146 @@
+{
+    "sourceFile": "frontend/src/utis/HandleApi.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 32,
+            "patches": [
+                {
+                    "date": 1743418469173,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1743418474700,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-import\n\\ No newline at end of file\n+import ax\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1743418480567,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-import ax\n\\ No newline at end of file\n+import axios from \"axios\";\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1743418486641,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,3 @@\n-import axios from \"axios\";\n\\ No newline at end of file\n+import axios from \"axios\";\n+\n+const\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1743418494081,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n import axios from \"axios\";\n \n-const\n\\ No newline at end of file\n+const baseURL = \"http://localhost:5000/api/v1\";\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1743418499178,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n import axios from \"axios\";\n \n-const baseURL = \"http://localhost:5000/api/v1\";\n\\ No newline at end of file\n+const baseURL = \"http://localhost:5000/\";\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1743418522366,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n import axios from \"axios\";\n \n-const baseURL = \"http://localhost:5000/\";\n\\ No newline at end of file\n+const baseURL = \"http://localhost:5000/\";\n"
+                },
+                {
+                    "date": 1743418528730,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,5 @@\n import axios from \"axios\";\n \n const baseURL = \"http://localhost:5000/\";\n+\n+const\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1743418535981,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n import axios from \"axios\";\n \n const baseURL = \"http://localhost:5000/\";\n \n-const\n\\ No newline at end of file\n+const getToDo\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1743418542039,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n import axios from \"axios\";\n \n const baseURL = \"http://localhost:5000/\";\n \n-const getToDo\n\\ No newline at end of file\n+const getAll\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1743418551839,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n import axios from \"axios\";\n \n const baseURL = \"http://localhost:5000/\";\n \n-const getAll\n\\ No newline at end of file\n+const getAllToDO\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1743418560341,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n import axios from \"axios\";\n \n const baseURL = \"http://localhost:5000/\";\n \n-const getAllToDO\n\\ No newline at end of file\n+const getAllToDO = (set)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1743418565919,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n import axios from \"axios\";\n \n const baseURL = \"http://localhost:5000/\";\n \n-const getAllToDO = (set)\n\\ No newline at end of file\n+const getAllToDO = (setT)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1743418573150,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n import axios from \"axios\";\n \n const baseURL = \"http://localhost:5000/\";\n \n-const getAllToDO = (setT)\n\\ No newline at end of file\n+const getAllToDO = (setToDO) => \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1743418578246,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,7 @@\n import axios from \"axios\";\n \n const baseURL = \"http://localhost:5000/\";\n \n-const getAllToDO = (setToDO) => \n\\ No newline at end of file\n+const getAllToDO = (setToDO) => {\n+    \n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1743418587317,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,6 +2,12 @@\n \n const baseURL = \"http://localhost:5000/\";\n \n const getAllToDO = (setToDO) => {\n-    \n+    axios.get(`${baseURL}todos`)\n+        .then(response => {\n+            setToDO(response.data);\n+        })\n+        .catch(error => {\n+            console.error(\"Error fetching todos:\", error);\n+        });\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1743418601944,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,10 @@\n \n const baseURL = \"http://localhost:5000/\";\n \n const getAllToDO = (setToDO) => {\n-    axios.get(`${baseURL}todos`)\n+    axios\n+    .get(`${baseURL}todos`)\n         .then(response => {\n             setToDO(response.data);\n         })\n         .catch(error => {\n"
+                },
+                {
+                    "date": 1743418612051,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,11 +4,11 @@\n \n const getAllToDO = (setToDO) => {\n     axios\n     .get(`${baseURL}todos`)\n-        .then(response => {\n-            setToDO(response.data);\n-        })\n-        .catch(error => {\n-            console.error(\"Error fetching todos:\", error);\n-        });\n+    .then(response => {\n+        setToDO(response.data);\n+    })\n+    .catch(error => {\n+        console.error(\"Error fetching todos:\", error);\n+    });\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1743418677000,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n const baseURL = \"http://localhost:5000/\";\n \n const getAllToDO = (setToDO) => {\n     axios\n-    .get(`${baseURL}todos`)\n+    .get({baseURL}todos`)\n     .then(response => {\n         setToDO(response.data);\n     })\n     .catch(error => {\n"
+                },
+                {
+                    "date": 1743418686372,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n const baseURL = \"http://localhost:5000/\";\n \n const getAllToDO = (setToDO) => {\n     axios\n-    .get({baseURL}todos`)\n+    .getbaseURL}todos`)\n     .then(response => {\n         setToDO(response.data);\n     })\n     .catch(error => {\n"
+                },
+                {
+                    "date": 1743418693800,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n const baseURL = \"http://localhost:5000/\";\n \n const getAllToDO = (setToDO) => {\n     axios\n-    .getbaseURL}todos`)\n+    .get(baseURLtodos`)\n     .then(response => {\n         setToDO(response.data);\n     })\n     .catch(error => {\n"
+                },
+                {
+                    "date": 1743418720474,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,12 +3,5 @@\n const baseURL = \"http://localhost:5000/\";\n \n const getAllToDO = (setToDO) => {\n     axios\n-    .get(baseURLtodos`)\n-    .then(response => {\n-        setToDO(response.data);\n-    })\n-    .catch(error => {\n-        console.error(\"Error fetching todos:\", error);\n-    });\n-}\n\\ No newline at end of file\n+    .get(baseURL)\n"
+                },
+                {
+                    "date": 1743418726818,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,4 +4,5 @@\n \n const getAllToDO = (setToDO) => {\n     axios\n     .get(baseURL)\n+    .then\n"
+                },
+                {
+                    "date": 1743418731912,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,5 +4,5 @@\n \n const getAllToDO = (setToDO) => {\n     axios\n     .get(baseURL)\n-    .then\n+    .then(({daata}))\n"
+                },
+                {
+                    "date": 1743418737033,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,5 +4,5 @@\n \n const getAllToDO = (setToDO) => {\n     axios\n     .get(baseURL)\n-    .then(({daata}))\n+    .then(({data}) => {)\n"
+                },
+                {
+                    "date": 1743418743593,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,5 +4,6 @@\n \n const getAllToDO = (setToDO) => {\n     axios\n     .get(baseURL)\n-    .then(({data}) => {)\n+    .then(({data}) => {\n+        console)\n"
+                },
+                {
+                    "date": 1743418751113,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,5 +5,7 @@\n const getAllToDO = (setToDO) => {\n     axios\n     .get(baseURL)\n     .then(({data}) => {\n-        console)\n+        console.log(data);\n+        setToDO(data);\n+    })\n"
+                },
+                {
+                    "date": 1743418764025,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,7 +5,11 @@\n const getAllToDO = (setToDO) => {\n     axios\n     .get(baseURL)\n     .then(({data}) => {\n-        console.log(data);\n+        console.log(''data);\n         setToDO(data);\n     })\n+    .catch((err) => {\n+        console.log(err);\n+    });\n+}\n"
+                },
+                {
+                    "date": 1743418770405,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n const getAllToDO = (setToDO) => {\n     axios\n     .get(baseURL)\n     .then(({data}) => {\n-        console.log(''data);\n+        console.log('DATA ',data);\n         setToDO(data);\n     })\n     .catch((err) => {\n         console.log(err);\n"
+                },
+                {
+                    "date": 1743418776825,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n const getAllToDO = (setToDO) => {\n     axios\n     .get(baseURL)\n     .then(({data}) => {\n-        console.log('DATA ',data);\n+        console.log('data ----',data);\n         setToDO(data);\n     })\n     .catch((err) => {\n         console.log(err);\n"
+                },
+                {
+                    "date": 1743418786859,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,11 +5,13 @@\n const getAllToDO = (setToDO) => {\n     axios\n     .get(baseURL)\n     .then(({data}) => {\n-        console.log('data ----',data);\n+        console.log('data ----> ',data);\n         setToDO(data);\n     })\n     .catch((err) => {\n         console.log(err);\n     });\n }\n+\n+export \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1743418792336,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,5 +13,5 @@\n         console.log(err);\n     });\n }\n \n-export \n\\ No newline at end of file\n+export {get}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1743430994592,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,13 +5,11 @@\n const getAllToDO = (setToDO) => {\n     axios\n     .get(baseURL)\n     .then(({data}) => {\n-        console.log('data ----> ',data);\n+        console.log('data ----',data);\n         setToDO(data);\n     })\n     .catch((err) => {\n         console.log(err);\n     });\n }\n-\n\\ No newline at end of file\n-export {get}\n"
+                }
+            ],
+            "date": 1743418469173,
+            "name": "Commit-0",
+            "content": "import"
+        }
+    ]
+}

@@ -1,46 +1,22 @@
-import { useEffect, useState } from 'react';
-import ToDo from "./components/ToDo";
-import { getAllToDO } from './utils/HandleApi';
+/**
+ * App Component
+ * Main application component that serves as the root of the Todo application.
+ * Handles the overall layout and routing of the application.
+ */
+
+import React from "react";
+import TodoList from "./components/TodoList";
+import "./styles.css";
 
 function App() {
-
-  const [ToDo, setToDo] = useState([]);
-  const [text, setText] = useState("");
-
-  useEffect(() => {
-    getAllToDO(setToDo);
-  }, []);
-
   return (
-    <div className='App'>
-
+    <div className="App">
+      <h1>ToDo app - Zenno</h1>
       <div className="container">
-
-        <h1>ToDO App - Zenno</h1>
-
-        <div className="top">
-          <input 
-          type="text" 
-          placeholder="Enter a task" 
-          value={text} 
-          onChange={(e) => setText(e.target.value)} />
-          <div className="add" onClick={addToDo}>Add Task</div>
-        </div>
-
-        <div className="tasks">
-          {ToDo.map((todo, index) => (
-            <ToDo
-              key={index}
-              text={todo.text}
-              updateMode={() => {}}
-              deleteToDo={() => {}}
-            />
-          ))}
-        </div>
-
+        <TodoList />
       </div>
-
     </div>
   );
 }
+
 export default App;

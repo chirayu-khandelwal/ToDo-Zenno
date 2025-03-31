@@ -1,0 +1,62 @@
+{
+    "sourceFile": "frontend/src/utils/HandleApi.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 11,
+            "patches": [
+                {
+                    "date": 1743431314996,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1743431335120,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,13 +15,4 @@\n }\n \n export {getAllToDO}\n \n-export const getAllToDO = async (setTodo) => {\n-    try {\n-      const response = await fetch('http://localhost:5000/api/todos');\n-      const data = await response.json();\n-      setTodo(data);\n-    } catch (error) {\n-      console.error('Error fetching todos:', error);\n-    }\n-  };\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1743431350154,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,18 +1,17 @@\n import axios from \"axios\";\n \n-const baseURL = \"http://localhost:5000/\";\n+const baseURL = \"http://localhost:5000/api/todos\"; // Updated to point to the correct API endpoint\n \n const getAllToDO = (setToDO) => {\n     axios\n-    .get(baseURL)\n-    .then(({data}) => {\n-        console.log('data ----> ',data);\n-        setToDO(data);\n-    })\n-    .catch((err) => {\n-        console.log(err);\n-    });\n-}\n+        .get(baseURL)\n+        .then(({ data }) => {\n+            console.log('data ----> ', data);\n+            setToDO(data);\n+        })\n+        .catch((err) => {\n+            console.error('Error fetching todos:', err);\n+        });\n+};\n \n-export {getAllToDO}\n-\n+export { getAllToDO };\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1743431356346,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,17 +1,18 @@\n import axios from \"axios\";\n \n-const baseURL = \"http://localhost:5000/api/todos\"; // Updated to point to the correct API endpoint\n+const baseURL = \"http://localhost:5000/\";\n \n const getAllToDO = (setToDO) => {\n     axios\n-        .get(baseURL)\n-        .then(({ data }) => {\n-            console.log('data ----> ', data);\n-            setToDO(data);\n-        })\n-        .catch((err) => {\n-            console.error('Error fetching todos:', err);\n-        });\n-};\n+    .get(baseURL)\n\\ No newline at end of file\n+    .then(({data}) => {\n+        console.log('data ----> ',data);\n+        setToDO(data);\n+    })\n+    .catch((err) => {\n+        console.log(err);\n+    });\n+}\n \n-export { getAllToDO };\n+export {getAllToDO}\n+\n"
+                },
+                {
+                    "date": 1743431366528,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,5 +13,6 @@\n         console.log(err);\n     });\n }\n \n-export {getAllToDO}\n\\ No newline at end of file\n+export {getAllToDO}\n+\n"
+                },
+                {
+                    "date": 1743431381040,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,18 +1,17 @@\n import axios from \"axios\";\n \n-const baseURL = \"http://localhost:5000/\";\n+const baseURL = \"http://localhost:5000/api/todos\"; // Updated to point to the correct API endpoint\n \n const getAllToDO = (setToDO) => {\n     axios\n-    .get(baseURL)\n-    .then(({data}) => {\n-        console.log('data ----> ',data);\n-        setToDO(data);\n-    })\n-    .catch((err) => {\n-        console.log(err);\n-    });\n-}\n+        .get(baseURL)\n+        .then(({ data }) => {\n+            console.log('data ----> ', data);\n+            setToDO(data);\n+        })\n+        .catch((err) => {\n+            console.error('Error fetching todos:', err);\n+        });\n+};\n \n-export {getAllToDO}\n-\n+export { getAllToDO };\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1743431394267,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,17 +1,18 @@\n import axios from \"axios\";\n \n-const baseURL = \"http://localhost:5000/api/todos\"; // Updated to point to the correct API endpoint\n+const baseURL = \"http://localhost:5000/\";\n \n const getAllToDO = (setToDO) => {\n     axios\n         .get(baseURL)\n-        .then(({ data }) => {\n-            console.log('data ----> ', data);\n+        .then(({data}) => {\n+            console.log('data ----> ',data);\n             setToDO(data);\n         })\n         .catch((err) => {\n-            console.error('Error fetching todos:', err);\n+            console.log(err);\n\\ No newline at end of file\n         });\n-};\n+}\n \n-export { getAllToDO };\n+export {getAllToDO}\n+\n"
+                },
+                {
+                    "date": 1743431407469,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,5 +13,6 @@\n             console.log(err);\n         });\n }\n \n-export {getAllToDO}\n\\ No newline at end of file\n+export {getAllToDO}\n+\n"
+                },
+                {
+                    "date": 1743431428236,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,18 +1,17 @@\n import axios from \"axios\";\n \n-const baseURL = \"http://localhost:5000/\";\n+const baseURL = \"http://localhost:5000/api/todos\"; // Updated to point to the correct API endpoint\n \n const getAllToDO = (setToDO) => {\n     axios\n         .get(baseURL)\n-        .then(({data}) => {\n-            console.log('data ----> ',data);\n+        .then(({ data }) => {\n+            console.log('data ----> ', data);\n             setToDO(data);\n         })\n         .catch((err) => {\n-            console.log(err);\n+            console.error('Error fetching todos:', err);\n         });\n-}\n+};\n \n-export {getAllToDO}\n-\n+export { getAllToDO };\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1743431440539,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import axios from \"axios\";\n \n-const baseURL = \"http://localhost:5000/api/todos\"; // Updated to point to the correct API endpoint\n+const baseURL = \"http://localhost:5000/api/\"; \n \n const getAllToDO = (setToDO) => {\n     axios\n         .get(baseURL)\n"
+                },
+                {
+                    "date": 1743431449175,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import axios from \"axios\";\n \n-const baseURL = \"http://localhost:5000/\"; \n+const baseURL = \"http://localhost:5000/api/todos\"; \n \n const getAllToDO = (setToDO) => {\n     axios\n         .get(baseURL)\n"
+                },
+                {
+                    "date": 1743432037651,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,19 @@\n+import axios from \"axios\";\n+\n+import { getAllToDO } from \"./api/handleApi\";\n+\n+const baseURL = \"http://localhost:5000/api/todos\"; \n+\n+const getAllToDO = (setToDO) => {\n+  axios\n+    .get(baseURL)\n+    .then(({ data }) => {\n+      console.log('data ----> ', data);\n+      setToDO(data);\n+    })\n+    .catch((err) => {\n+      console.error('Error fetching todos:', err);\n+    });\n+};\n+\n+export { getAllToDO };\n"
+                }
+            ],
+            "date": 1743431314996,
+            "name": "Commit-0",
+            "content": "import axios from \"axios\";\n\nconst baseURL = \"http://localhost:5000/\";\n\nconst getAllToDO = (setToDO) => {\n    axios\n    .get(baseURL)\n    .then(({data}) => {\n        console.log('data ----> ',data);\n        setToDO(data);\n    })\n    .catch((err) => {\n        console.log(err);\n    });\n}\n\nexport {getAllToDO}\n\nexport const getAllToDO = async (setTodo) => {\n    try {\n      const response = await fetch('http://localhost:5000/api/todos');\n      const data = await response.json();\n      setTodo(data);\n    } catch (error) {\n      console.error('Error fetching todos:', error);\n    }\n  };"
+        }
+    ]
+}

@@ -18,6 +18,5 @@ mongoose
   .catch((err) => console.log(err));
 
 // API routes
-app.use(routes);
-
+app.use('/api', routes); 
 app.listen(PORT, () => console.log(`Zenno is running on ${PORT}`));

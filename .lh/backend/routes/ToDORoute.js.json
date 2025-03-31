@@ -1,0 +1,22 @@
+{
+    "sourceFile": "backend/routes/ToDORoute.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1743406035363,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1743431856616,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,18 @@\n+const { Router } = require(\"express\");\n+const { getToDo, saveToDo, updateToDo, deleteToDo } = require(\"../controllers/Todocontrollers\");\n+\n+const router = Router();\n+\n+// Get all todos\n+router.get(\"/\", getToDo);\n+\n+// Save a new todo (create)\n+router.post(\"/save\", saveToDo);\n+\n+// Update an existing todo\n+router.put(\"/update\", updateToDo);  // Use PUT instead of POST for updates\n+\n+// Delete a todo\n+router.delete(\"/delete\", deleteToDo);  // Use DELETE instead of POST for deletes\n+\n+module.exports = router;\n"
+                }
+            ],
+            "date": 1743406035363,
+            "name": "Commit-0",
+            "content": "const { Router } = require(\"express\");\nconst { getToDo, saveToDo, updateToDo, deleteToDo } = require(\"../controllers/Todocontrollers\");\n\nconst router = Router();\n\nrouter.get(\"/\", getToDo);\nrouter.post(\"/save\", saveToDo);\nrouter.post(\"/update\", updateToDo);\nrouter.post(\"/delete\", deleteToDo);\n\nmodule.exports = router;\n~"
+        }
+    ]
+}
