@@ -3,9 +3,16 @@ const { getToDo, saveToDo, updateToDo, deleteToDo } = require("../controllers/To
 
 const router = Router();
 
+// Get all todos
 router.get("/", getToDo);
+
+// Save a new todo (create)
 router.post("/save", saveToDo);
-router.post("/update", updateToDo);
-router.post("/delete", deleteToDo);
+
+// Update an existing todo
+router.put("/update", updateToDo);  // Use PUT instead of POST for updates
+
+// Delete a todo
+router.delete("/delete", deleteToDo);  // Use DELETE instead of POST for deletes
 
 module.exports = router;
